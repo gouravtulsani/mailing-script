@@ -29,7 +29,7 @@ if attachfile == "y":
 	part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
 
 	msg.attach(part)
-	
+
 
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
@@ -37,4 +37,4 @@ server.login(fromaddr, "xpgquodognpmeujt")
 text = msg.as_string()
 server.sendmail(fromaddr, toaddr, text)
 server.quit()
-print("mail sent.")
+print("mail sent..")
