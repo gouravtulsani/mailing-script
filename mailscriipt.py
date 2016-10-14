@@ -1,11 +1,12 @@
-import smtplib
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 from email.MIMEBase import MIMEBase
 from email import encoders
+import smtplib
+
  
 fromaddr = "tulsanig1432@gmail.com"
-toaddr = str(raw_input("enter sender's mailaddress"))
+toaddr = str(raw_input("enter sender's mailaddress: "))
  
 msg = MIMEMultipart()
  
@@ -29,7 +30,7 @@ msg.attach(part)
  
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
-server.login(fromaddr, "wtctaukboifmdqul")
+server.login(fromaddr, "xpgquodognpmeujt")
 text = msg.as_string()
 server.sendmail(fromaddr, toaddr, text)
 server.quit()
