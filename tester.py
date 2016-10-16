@@ -36,8 +36,8 @@ server.starttls()
 server.login(fromaddr, "xpgquodognpmeujt")
 text = msg.as_string()
 totalmail = 0
-for x in xrange(1,4):
-	toaddr = str(raw_input("sender %d"%x))
+for line in open(raw_input("NAME OF THE FILE(from where we are taking email IDs.): ")):
+	toaddr = line.rstrip('\n')
 	server.sendmail(fromaddr, toaddr, text)
 	totalmail +=1
 server.quit()
